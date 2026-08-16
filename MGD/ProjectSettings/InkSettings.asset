@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: InkEditor::Ink.UnityIntegration.InkSettings
   templateFile: {fileID: 0}
-  printInkLogsInConsoleOnCompile: 0
+  printInkLogsInConsoleOnCompile: 1
   suppressStartupWindow: 0
   automaticallyAddDefineSymbols: 1
