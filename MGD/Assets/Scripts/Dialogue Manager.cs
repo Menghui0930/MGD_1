@@ -3,28 +3,21 @@ using System.Collections.Generic;
 using DG.Tweening;
 using Ink.Runtime;
 using Ink.UnityIntegration;
-using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
-    public InputAction debugKey;
-
     [Header("Ink Settings")]
     public InkFile inkFile;
     private Story story;
-
-
-    [Header("UI Elements")]
-    public TMP_Text dialogueText;
-    public TMP_Text speakerNameText;
     public RectTransform characterPortraitPlayer;
     public RectTransform characterPortraitNPC;
 
+    public InputAction debugKey;
 
-    private Tween activeTextTween;
-    public float charactersPerSecond;
+    [Header("Components")]
+    public DialogueView dialogueView;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,9 +39,9 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     public void DisplayNextLine()
     {
-        if (activeTextTween != null && activeTextTween.IsPlaying())
+        if (dialogueView.IsTyping())
         {
-            activeTextTween.Complete();
+            dialogueView.CompleteText();
             return;
         }
 
@@ -56,7 +49,7 @@ public class DialogueManager : MonoBehaviour
 
         string text = story.Continue();
         ProcessTags(story.currentTags);
-        AnimateText(text);
+        dialogueView.AnimateText(text);
 
     }
 
@@ -71,7 +64,7 @@ public class DialogueManager : MonoBehaviour
             switch (key)
             {
                 case "speaker":
-                speakerNameText.text = value;
+                dialogueView.SetSpeaker(value);
                 break;
 
                 case "animation":
@@ -81,22 +74,23 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    private void AnimateText(string fullText)
-    {
-        activeTextTween?.Kill();
-            
-        dialogueText.text = fullText;
-        dialogueText.maxVisibleCharacters = 0;
 
-        
+    // private void SetActiveCharacter(string characterName)
+    // {
+    //     if (activeCharacter.characterName == characterName) return;
 
-        int totalChars = fullText.Length;
-        activeTextTween = DOTween.To( 
-            x => dialogueText.maxVisibleCharacters = (int)x, //setter, return value is x
-            0, //mininum characters
-            totalChars, //maximum
-            totalChars/charactersPerSecond) //duration
-            .SetEase(Ease.Linear) //prints text in linear speed
-            .OnComplete(() => activeTextTween = null); //resets the activeTextTween
-    }
+    //     foreach (Character character in characters)
+    //     {
+    //         if (character.characterName == characterName)
+    //         {
+    //             activeCharacter = character;
+    //             RectTransform spriteToUnfade = activeCharacter.characterSprite[activeCharacter.currentSpriteIndex].location;
+                
+    //         }
+                
+    //     }
+    //     speakerNameText.text = characterName;
+
+
+    // }
 }
