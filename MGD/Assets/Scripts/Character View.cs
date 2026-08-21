@@ -13,7 +13,6 @@ public class CharacterView : MonoBehaviour
     {
             public string slotID;
             public Image portraitImage;
-            public Transform transform;
             public string currentCharacterName;
             public Tween activeTween;
 
@@ -55,7 +54,35 @@ public class CharacterView : MonoBehaviour
 
     public void SetCharacter(string characterName, string slotID, string expression = "default")
     {
-        CharacterSlot targetSlot = GetSlot(slotID);
+        CharacterSlot targetSlot = GetSlot(slotID); //checks if the slot exists
+        if (targetSlot == null) return;
+
+        if(!characterLookup.TryGetValue(characterName, out CharacterData data)) return; //check if the character data exists
+
+
+        Sprite newSprite = data.GetSprite(expression);
+        if(newSprite != null)
+        {
+            targetSlot.portraitImage.sprite = newSprite;
+            targetSlot.currentCharacterName = characterName;
+        }
+    }
+
+    public void HighlightSpeaker(string activeCharacterName) //fades nonactive character and unfades the active character
+    {
+        foreach (var slot in slots)
+        {
+            bool isActiveSpeaker = slot.currentCharacterName.Equals(activeCharacterName, StringComparison.OrdinalIgnoreCase);
+            
+            slot.activeTween?.Kill();
+
+            float targetAlpha = isActiveSpeaker? 1.0f: inactiveAlpha;
+            float targetScale = isActiveSpeaker? activeScale: inactiveScale;
+
+            Sequence animationSequence = DOTween.Sequence();
+            animationSequence.Join(slot.portraitImage.DOFade(targetAlpha, fadeDuration));
+            animationSequence.Join(slot.portraitImage.transform.DOScale(targetScale, fadeDuration)).SetEase(Ease.OutQuad);
+        }
     }
 
 

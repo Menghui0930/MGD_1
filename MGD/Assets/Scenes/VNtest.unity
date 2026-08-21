@@ -1027,6 +1027,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2089681544}
   - component: {fileID: 2089681543}
+  - component: {fileID: 2089681546}
+  - component: {fileID: 2089681545}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -1046,22 +1048,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876eb1ab9b0a0da40aaa613feaabb255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
-  characters:
-  - characterName: Datuk John
-    characterSprite:
-    - spriteName: datukJohnNormal
-      sprite: {fileID: 0}
-  - characterName: Krab Rider
-    characterSprite: []
   inkFile: {fileID: 6231892579173505729, guid: c758d4769190f4f45b5a2bdf962d76c1, type: 3}
-  dialogueText: {fileID: 32915939}
-  speakerNameText: {fileID: 346248314}
   characterPortraitPlayer: {fileID: 1890984601}
   characterPortraitNPC: {fileID: 261733041}
-  activeCharacter:
-    characterName: 
-    characterSprite: []
-  charsPerSecond: 5
   debugKey:
     m_Name: Debug Key
     m_Type: 0
@@ -1079,6 +1068,8 @@ MonoBehaviour:
       m_Action: Debug Key
       m_Flags: 0
     m_Flags: 0
+  dialogueView: {fileID: 2089681546}
+  characterView: {fileID: 2089681545}
 --- !u!4 &2089681544
 Transform:
   m_ObjectHideFlags: 0
@@ -1094,6 +1085,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2089681545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089681542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9135c2e43fa444dbfb75d71048ff69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterView
+  slots:
+  - slotID: Left
+    portraitImage: {fileID: 1890984602}
+    currentCharacterName: 
+  - slotID: Right
+    portraitImage: {fileID: 261733042}
+    currentCharacterName: 
+  characterDatabase:
+  - {fileID: 11400000, guid: af67831cc1f8c434ebbbef432fe14f09, type: 2}
+  - {fileID: 11400000, guid: 588cce80d47a28b4b86d18f134048141, type: 2}
+  fadeDuration: 0.2
+  inactiveAlpha: 0.4
+  activeScale: 1.05
+  inactiveScale: 1
+--- !u!114 &2089681546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089681542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485cbe046369a844b8309a1fda961ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueView
+  dialogueText: {fileID: 32915939}
+  speakerNameText: {fileID: 346248314}
+  charsPerSecond: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Components")]
     public DialogueView dialogueView;
+    public CharacterView characterView;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,6 +56,10 @@ public class DialogueManager : MonoBehaviour
 
     public void ProcessTags(List<String> tags)
     {
+        string currentSpeaker = "";
+        string currentSlot = "Left";
+        string currentEmotion = "default";
+
         foreach (string tag in tags)
         {
             string[] splitTag = tag.Split(":");
@@ -65,32 +70,24 @@ public class DialogueManager : MonoBehaviour
             {
                 case "speaker":
                 dialogueView.SetSpeaker(value);
+                currentSpeaker = value;
                 break;
 
-                case "animation":
+                case "slot":
+                currentSlot = value;
+                break;
+
+                case "emotion":
+                currentEmotion = value;
                 break;
             }
         }
 
+        if (!string.IsNullOrEmpty(currentSpeaker))
+        {
+            characterView.SetCharacter(currentSpeaker,currentSlot,currentEmotion);
+            characterView.HighlightSpeaker(currentSpeaker);
+        }
+
     }
-
-
-    // private void SetActiveCharacter(string characterName)
-    // {
-    //     if (activeCharacter.characterName == characterName) return;
-
-    //     foreach (Character character in characters)
-    //     {
-    //         if (character.characterName == characterName)
-    //         {
-    //             activeCharacter = character;
-    //             RectTransform spriteToUnfade = activeCharacter.characterSprite[activeCharacter.currentSpriteIndex].location;
-                
-    //         }
-                
-    //     }
-    //     speakerNameText.text = characterName;
-
-
-    // }
 }

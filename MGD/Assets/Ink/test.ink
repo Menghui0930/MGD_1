@@ -1,10 +1,10 @@
 # speaker:Datuk John
 Hello Bang, This a test bang.
 
-# speaker:Krab Rider
+# speaker:Krab Rider # slot:Right
 Walao eh.
 
-# speaker:Bob
-What you guys doin
+# speaker:Datuk John
+Uwu sdoipajsd.
 
 -> END
