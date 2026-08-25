@@ -37,6 +37,20 @@ public class CharacterView : MonoBehaviour
     //Loads all the character data.
     void Awake()
     {
+        foreach (var slot in slots)
+        {
+            if (slot.portraitImage != null)
+            {
+                // Set initial alpha to 0 and disable rendering
+                Color color = slot.portraitImage.color;
+                color.a = 0f;
+                slot.portraitImage.color = color;
+                
+                slot.portraitImage.enabled = false;
+                slot.portraitImage.raycastTarget = false;
+            }
+        }
+        
         characterLookup = new();
         foreach (var charData in characterDatabase)
         {
@@ -65,7 +79,25 @@ public class CharacterView : MonoBehaviour
         {
             targetSlot.portraitImage.sprite = newSprite;
             targetSlot.currentCharacterName = characterName;
+
+            //Turns the Image on
+            targetSlot.portraitImage.enabled = true;
         }
+    }
+
+    public void ClearSlot(string slotId)
+    {
+        CharacterSlot slot = GetSlot(slotId);
+        if (slot == null) return;
+
+        slot.activeTween?.Kill();
+        
+        slot.activeTween = slot.portraitImage.DOFade(0f, fadeDuration)
+            .OnComplete(() => {
+                slot.currentCharacterName = string.Empty;
+                slot.portraitImage.sprite = null;
+                slot.portraitImage.enabled = false;
+            });
     }
 
     public void HighlightSpeaker(string activeCharacterName) //fades nonactive character and unfades the active character
