@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 131cc8f3f6f1ba54694cebe92f3655cf, type: 3}
-  m_Name: Datuk John
+  m_Name: Jinuchu
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  characterName: Datuk John
+  characterName: Jinuchu
   expressions:
   - expressionName: default
-    sprite: {fileID: 2475243478545386860, guid: 7a838bbc80aeaa9479023e2aefe58666, type: 3}
+    sprite: {fileID: -1479701492630558076, guid: 6e7265fcd4ef6b049bd0bfaf3c1496d4, type: 3}

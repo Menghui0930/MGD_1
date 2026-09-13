@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 131cc8f3f6f1ba54694cebe92f3655cf, type: 3}
-  m_Name: Datuk John
+  m_Name: Harry Mau
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  characterName: Datuk John
+  characterName: Harry Mau
   expressions:
   - expressionName: default
-    sprite: {fileID: 2475243478545386860, guid: 7a838bbc80aeaa9479023e2aefe58666, type: 3}
+    sprite: {fileID: -8124997349481048528, guid: 27e6c5f3931edd54aa85930cf00e5a4c, type: 3}

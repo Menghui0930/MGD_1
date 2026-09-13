@@ -15,4 +15,4 @@ MonoBehaviour:
   characterName: Krab Rider
   expressions:
   - expressionName: default
-    sprite: {fileID: -6850688149625439806, guid: 4f45734e0f0649743bc880b71b1e6fed, type: 3}
+    sprite: {fileID: -8369452582091160248, guid: 3fc20d688d0f38b4190a494143cc9b8f, type: 3}

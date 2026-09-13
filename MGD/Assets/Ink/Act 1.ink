@@ -2,7 +2,7 @@
 (Hmm... The stall isn't doing too well... Everyone is selling the same generic alien food. It barely tastes like anything.)
 
 # speaker:Datuk John # slot:left
-(The only reason my stall is satying afloat is the amount of customers I attract with my low prices... Oh, looks like some delivery driver is approaching.)
+(The only reason my stall is staying afloat is the amount of customers I attract with my low prices... Oh, looks like some delivery driver is approaching.)
 
 # speaker:Krab Rider # slot:right
 Oi! Boss, You open ke?, you macam orang Malaysia ya? You serve Malaysian cuisine here? I damn lapar leh.

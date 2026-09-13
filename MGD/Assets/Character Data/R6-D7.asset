@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 131cc8f3f6f1ba54694cebe92f3655cf, type: 3}
-  m_Name: Datuk John
+  m_Name: R6-D7
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  characterName: Datuk John
+  characterName: R6-D7
   expressions:
   - expressionName: default
-    sprite: {fileID: 2475243478545386860, guid: 7a838bbc80aeaa9479023e2aefe58666, type: 3}
+    sprite: {fileID: 6742179407481534296, guid: d37ba12611825b841aae150282a11358, type: 3}
+  - expressionName: 67
+    sprite: {fileID: 6742179407481534296, guid: d37ba12611825b841aae150282a11358, type: 3}

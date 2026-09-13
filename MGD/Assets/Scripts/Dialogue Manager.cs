@@ -14,7 +14,8 @@ public class DialogueManager : MonoBehaviour
     public RectTransform characterPortraitPlayer;
     public RectTransform characterPortraitNPC;
 
-    public InputAction debugKey;
+    private InputAction key;
+    public InputActionAsset inputActionAsset;
 
     [Header("Components")]
     public DialogueView dialogueView;
@@ -23,13 +24,14 @@ public class DialogueManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        debugKey.Enable();
+        key = inputActionAsset.FindAction("Click");
         story = new Story(inkFile.storyJson);
+        DisplayNextLine();
     }
 
     void Update()
     {
-        if(debugKey.triggered)
+        if(key.WasPressedThisFrame())
         {
             Debug.Log("hi");
             DisplayNextLine();
@@ -46,7 +48,12 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (!story.canContinue) return;
+        if (!story.canContinue)
+        {
+            Debug.Log("Go next scene...");
+            //do something go next scene or something
+            return;
+        }
 
         string text = story.Continue();
         ProcessTags(story.currentTags);
