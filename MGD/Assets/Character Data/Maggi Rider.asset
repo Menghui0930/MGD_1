@@ -15,4 +15,4 @@ MonoBehaviour:
   characterName: Maggi Rider
   expressions:
   - expressionName: default
-    sprite: {fileID: 0}
+    sprite: {fileID: 406709494841681570, guid: fd30bf99251d4dc4a82539d1898bc820, type: 3}
