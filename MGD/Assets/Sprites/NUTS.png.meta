@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 6eb47cfcaeb22d14fa12233ba15f11d1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5886415923014649242
+    second: NUTS_0
+  - first:
+      213: -3531998670453225211
+    second: NUTS_1
+  - first:
+      213: 6203267589786235564
+    second: NUTS_2
+  - first:
+      213: -3814155953087898224
+    second: NUTS_3
+  - first:
+      213: 3670525699808084127
+    second: NUTS_4
+  - first:
+      213: -1984768761492505152
+    second: NUTS_5
+  - first:
+      213: 5020542262646853486
+    second: NUTS_6
+  - first:
+      213: -5574724198297446610
+    second: NUTS_7
+  - first:
+      213: 5415298048198135078
+    second: NUTS_8
+  - first:
+      213: -8991183198348535387
+    second: NUTS_9
+  - first:
+      213: 2754180628229718685
+    second: NUTS_10
+  - first:
+      213: 8146411083067047010
+    second: NUTS_11
+  - first:
+      213: 4534064822522375529
+    second: NUTS_12
+  - first:
+      213: -1303156346827295330
+    second: NUTS_13
+  - first:
+      213: -3063260870383525203
+    second: NUTS_14
+  - first:
+      213: 413082771775722722
+    second: NUTS_15
+  - first:
+      213: -4959972404927394867
+    second: NUTS_16
+  - first:
+      213: -4274695125197753143
+    second: NUTS_17
+  - first:
+      213: -9004341477727125641
+    second: NUTS_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NUTS_0
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 532
+        width: 98
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66a3284d7ef3f4ea0800000000000000
+      internalID: -5886415923014649242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_1
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 588
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509cb7c2ce1dbfec0800000000000000
+      internalID: -3531998670453225211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_2
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 468
+        width: 41
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca2f6efa10f661650800000000000000
+      internalID: 6203267589786235564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_3
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 397
+        width: 108
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d11427e55611bc0800000000000000
+      internalID: -3814155953087898224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_4
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 526
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f90c00c3da350f230800000000000000
+      internalID: 3670525699808084127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_5
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 474
+        width: 55
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cd72f1c35fa474e0800000000000000
+      internalID: -1984768761492505152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_6
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 443
+        width: 62
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6fc6e0869c8ca540800000000000000
+      internalID: 5020542262646853486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_7
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 330
+        width: 161
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e27d4b7b0e992a2b0800000000000000
+      internalID: -5574724198297446610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_8
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 453
+        width: 31
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62d47b322e0072b40800000000000000
+      internalID: 5415298048198135078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_9
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 379
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a999f7b486e83380800000000000000
+      internalID: -8991183198348535387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_10
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 403
+        width: 47
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9205e860b0d83620800000000000000
+      internalID: 2754180628229718685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_11
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 359
+        width: 60
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c3480f7bddd0170800000000000000
+      internalID: 8146411083067047010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_12
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 392
+        width: 62
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96d6a0ffeeb3cee30800000000000000
+      internalID: 4534064822522375529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_13
+      rect:
+        serializedVersion: 2
+        x: 1148
+        y: 337
+        width: 49
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e95309cf4324aede0800000000000000
+      internalID: -1303156346827295330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_14
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 341
+        width: 48
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da2af6ed77c1d75d0800000000000000
+      internalID: -3063260870383525203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_15
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 281
+        width: 56
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e49682a7909bb500800000000000000
+      internalID: 413082771775722722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_16
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 323
+        width: 61
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcb00947063aa2bb0800000000000000
+      internalID: -4959972404927394867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_17
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 253
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c47e739e6b3da4c0800000000000000
+      internalID: -4274695125197753143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NUTS_18
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 287
+        width: 63
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77f32cf02272a0380800000000000000
+      internalID: -9004341477727125641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      NUTS_0: -5886415923014649242
+      NUTS_1: -3531998670453225211
+      NUTS_10: 2754180628229718685
+      NUTS_11: 8146411083067047010
+      NUTS_12: 4534064822522375529
+      NUTS_13: -1303156346827295330
+      NUTS_14: -3063260870383525203
+      NUTS_15: 413082771775722722
+      NUTS_16: -4959972404927394867
+      NUTS_17: -4274695125197753143
+      NUTS_18: -9004341477727125641
+      NUTS_2: 6203267589786235564
+      NUTS_3: -3814155953087898224
+      NUTS_4: 3670525699808084127
+      NUTS_5: -1984768761492505152
+      NUTS_6: 5020542262646853486
+      NUTS_7: -5574724198297446610
+      NUTS_8: 5415298048198135078
+      NUTS_9: -8991183198348535387
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

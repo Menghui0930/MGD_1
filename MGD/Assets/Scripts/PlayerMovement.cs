@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour {
     private InputAction m_Move;
     private InputAction m_Jump;
+    private Animator anim;
 
     #region Touch Input
 
@@ -58,6 +59,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Start() {
         theRB = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         JumpLeft = maxJumps;
         theRB.gravityScale = baseGravityScale;
     }
@@ -70,6 +72,11 @@ public class PlayerMovement : MonoBehaviour {
         h_Input = moveDir.x;
         float finalInput = Mathf.Abs(movetouchInput) > 0.01f ? movetouchInput : h_Input;
         _movement = Mathf.Abs(finalInput) > 0.1f ? finalInput : 0f;
+
+        anim.SetBool("isMoving", _movement != 0f);
+
+        if (_movement > 0f) transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        else if (_movement < 0f) transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
         // Select which ground Checker to use based on the current direction of gravity.
         Transform activeChecker = gravityDir == 1 ? groundCheckerBottom : groundCheckerTop;
