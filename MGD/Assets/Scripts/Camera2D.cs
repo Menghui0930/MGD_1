@@ -111,4 +111,18 @@ public class Camera2D : MonoBehaviour {
         minY = newMinY;
         stopFollow = newIsStopFollowing;
     }
+
+    public void SetMinY(float newMinY,float newMaxY) {
+        minY = newMinY;
+        maxY = newMaxY;
+    }
+
+    public void SetMinX(float newMinX, float newMaxX) {
+        minX = newMinX;
+        maxX = newMaxX;
+    }
+
+    public void SetVerticalOffset(float newVerticalOffset) {
+        _targetVerticalOffset = newVerticalOffset;
+    }
 }

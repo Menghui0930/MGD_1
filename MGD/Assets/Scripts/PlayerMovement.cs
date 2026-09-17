@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour {
     private InputAction m_Move;
     private InputAction m_Jump;
+    private InputAction m_Flip;
     private Animator anim;
 
     #region Touch Input
@@ -49,9 +51,12 @@ public class PlayerMovement : MonoBehaviour {
     private int gravityDir = 1; // 1 = normal, -1 = flip
     private Vector3 smoothedAccel;
 
+    private MovingPlatform currentPlatform = null;
+
     private void Awake() {
         m_Move = InputSystem.actions.FindAction("Move");
         m_Jump = InputSystem.actions.FindAction("Jump");
+        m_Flip = InputSystem.actions.FindAction("Flip");
 
         if (Accelerometer.current != null)
             InputSystem.EnableDevice(Accelerometer.current);
@@ -65,7 +70,10 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Update() {
-        CheckDeviceFlip();
+        //CheckDeviceFlip();
+        if (m_Flip.WasPressedThisFrame()) {
+            SetGravityDir(gravityDir * -1);
+        }
 
         // move
         moveDir = m_Move.ReadValue<Vector2>();
@@ -111,6 +119,10 @@ public class PlayerMovement : MonoBehaviour {
             theRB.linearVelocity += Vector2.up * Physics2D.gravity.y * gravityDir
                                      * (fallMultiplier - 1) * Time.deltaTime;
         }
+
+        if (currentPlatform != null && isGrounded) {
+            transform.position += currentPlatform.DeltaMovement;
+        }
     }
 
     private void Jump() {
@@ -141,6 +153,20 @@ public class PlayerMovement : MonoBehaviour {
 
         // flip player
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        MovingPlatform mp = collision.gameObject.GetComponent<MovingPlatform>();
+        if (mp != null) {
+            currentPlatform = mp;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision) {
+        MovingPlatform mp = collision.gameObject.GetComponent<MovingPlatform>();
+        if (mp != null && mp == currentPlatform) {
+            currentPlatform = null;
+        }
     }
 
     private void OnDrawGizmos() {

@@ -2,11 +2,13 @@
 using UnityEngine.InputSystem;
 
 public class SkillTriggerZone : MonoBehaviour {
+    private enum BridgeType { Short, Long, Special }
+
+    [SerializeField] private BridgeType bridgeType;
+
     [SerializeField] private BridgeController targetBridge;
     [SerializeField] private BridgeMultiController targetLongBridge;
-
-    public bool shortBridge = true;
-    public bool LongBridge = false;
+    [SerializeField] private SpecialBridgeController targetSpecialBridge;
 
     private InputAction m_Skill;
     private bool isPlayerInRange = false;
@@ -16,14 +18,20 @@ public class SkillTriggerZone : MonoBehaviour {
     }
 
     private void Update() {
-        if (isPlayerInRange && m_Skill.WasPressedThisFrame()) {
-            if (targetBridge.CanRepair) {
-                if (shortBridge) {
-                    targetBridge.Repair();
-                } else if (LongBridge) {
-                    targetLongBridge.Activate();
-                }
-            }
+        if (!isPlayerInRange || !m_Skill.WasPressedThisFrame()) return;
+
+        switch (bridgeType) {
+            case BridgeType.Short:
+                if (targetBridge.CanRepair) targetBridge.Repair();
+                break;
+
+            case BridgeType.Long:
+                if (targetLongBridge.CanActivate) targetLongBridge.Activate();
+                break;
+
+            case BridgeType.Special:
+                targetSpecialBridge.ForceRepair(); // 不检查状态，永远可以触发
+                break;
         }
     }
 
