@@ -51,6 +51,10 @@ public class PlayerMovement : MonoBehaviour {
     private int gravityDir = 1; // 1 = normal, -1 = flip
     private Vector3 smoothedAccel;
 
+    [Header("Squish Death")]
+    [SerializeField] private LayerMask squishMask; 
+    [SerializeField] private float squishCheckRadius = 0.3f;
+
     private MovingPlatform currentPlatform = null;
 
     private void Awake() {
@@ -88,11 +92,19 @@ public class PlayerMovement : MonoBehaviour {
 
         // Select which ground Checker to use based on the current direction of gravity.
         Transform activeChecker = gravityDir == 1 ? groundCheckerBottom : groundCheckerTop;
-        isGrounded = Physics2D.OverlapCircle(activeChecker.position, 0.3f, groundMask);
+        LayerMask combinedGroundMask = groundMask | squishMask;
+        isGrounded = Physics2D.OverlapCircle(activeChecker.position, 0.3f, combinedGroundMask);
 
         if (isGrounded && jumpForce == 0f && theRB.linearVelocityY == 0f) {
             JumpLeft = maxJumps;
             isJumping = false;
+        }
+
+        bool topBlocked = Physics2D.OverlapCircle(groundCheckerTop.position, squishCheckRadius, squishMask);
+        bool bottomBlocked = Physics2D.OverlapCircle(groundCheckerBottom.position, squishCheckRadius, squishMask);
+
+        if (topBlocked && bottomBlocked) {
+            GetComponent<PlayerRespawn>().Die();
         }
 
         theRB.linearVelocity = new Vector2(_movement * moveSpeed, theRB.linearVelocityY);
