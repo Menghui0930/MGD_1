@@ -13,13 +13,38 @@ public class SkillTriggerZone : MonoBehaviour {
     private InputAction m_Skill;
     private bool isPlayerInRange = false;
 
+    // 全局广播事件，任何脚本调用 SkillTriggerZone.RaiseSkillButtonPressed() 都会通知所有订阅者
+    public static event System.Action OnSkillButtonPressed;
+
     private void Awake() {
         m_Skill = InputSystem.actions.FindAction("Skill");
     }
 
-    private void Update() {
-        if (!isPlayerInRange || !m_Skill.WasPressedThisFrame()) return;
+    private void OnEnable() {
+        OnSkillButtonPressed += HandleSkillButtonPressed;
+    }
 
+    private void OnDisable() {
+        OnSkillButtonPressed -= HandleSkillButtonPressed;
+    }
+
+    private void Update() {
+        if (isPlayerInRange && m_Skill.WasPressedThisFrame()) {
+            TriggerSkill();
+        }
+    }
+
+    private void HandleSkillButtonPressed() {
+        if (isPlayerInRange) {
+            TriggerSkill();
+        }
+    }
+
+    public static void RaiseSkillButtonPressed() {
+        OnSkillButtonPressed?.Invoke();
+    }
+
+    private void TriggerSkill() {
         switch (bridgeType) {
             case BridgeType.Short:
                 if (targetBridge.CanRepair) targetBridge.Repair();
@@ -30,7 +55,7 @@ public class SkillTriggerZone : MonoBehaviour {
                 break;
 
             case BridgeType.Special:
-                targetSpecialBridge.ForceRepair(); // 不检查状态，永远可以触发
+                targetSpecialBridge.ForceRepair();
                 break;
         }
     }
