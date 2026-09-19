@@ -50,8 +50,7 @@ public class DialogueManager : MonoBehaviour
 
         if (!story.canContinue)
         {
-            Debug.Log("Go next scene...");
-            //do something go next scene or something
+            SceneController.Instance.LoadNextScene();
             return;
         }
 

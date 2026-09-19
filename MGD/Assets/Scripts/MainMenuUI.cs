@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour {
     [SerializeField] private string levelSceneName;
 
     public void OnStartButtonClicked() {
-        SceneManager.LoadScene(levelSceneName);
+        SceneController.Instance.LoadNextScene();
     }
 
     public void OnQuitButtonClicked() {
