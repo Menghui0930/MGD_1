@@ -11385,8 +11385,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUPIngredient
   ingredientUI: {fileID: 8204181585860550200}
-  audioSource: {fileID: 0}
-  pickUp: {fileID: 0}
+  audioSource: {fileID: 1970287231}
+  pickUp: {fileID: 8300000, guid: fd102e2d6e1af2b44bd68401aac11bdb, type: 3}
 --- !u!212 &1237815870
 SpriteRenderer:
   serializedVersion: 2
@@ -13763,8 +13763,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUPIngredient
   ingredientUI: {fileID: 8204181585860550200}
-  audioSource: {fileID: 0}
-  pickUp: {fileID: 0}
+  audioSource: {fileID: 1970287231}
+  pickUp: {fileID: 8300000, guid: fd102e2d6e1af2b44bd68401aac11bdb, type: 3}
 --- !u!212 &1517952211
 SpriteRenderer:
   serializedVersion: 2
@@ -15117,8 +15117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUPIngredient
   ingredientUI: {fileID: 8204181585860550200}
-  audioSource: {fileID: 0}
-  pickUp: {fileID: 0}
+  audioSource: {fileID: 1970287231}
+  pickUp: {fileID: 8300000, guid: fd102e2d6e1af2b44bd68401aac11bdb, type: 3}
 --- !u!58 &1822370081
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17016,8 +17016,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUPIngredient
   ingredientUI: {fileID: 8204181585860550200}
-  audioSource: {fileID: 0}
-  pickUp: {fileID: 0}
+  audioSource: {fileID: 1970287231}
+  pickUp: {fileID: 8300000, guid: fd102e2d6e1af2b44bd68401aac11bdb, type: 3}
 --- !u!212 &2062131075
 SpriteRenderer:
   serializedVersion: 2
