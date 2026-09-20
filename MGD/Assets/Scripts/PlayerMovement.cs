@@ -74,10 +74,13 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Update() {
-        //CheckDeviceFlip();
+        CheckDeviceFlip();
+
+        /*
         if (m_Flip.WasPressedThisFrame()) {
             SetGravityDir(gravityDir * -1);
         }
+        */
 
         // move
         moveDir = m_Move.ReadValue<Vector2>();
@@ -122,7 +125,6 @@ public class PlayerMovement : MonoBehaviour {
             jumpForce = 0f;
         }
 
-        // 下落加速：判断"是否正在朝重力方向运动"
         bool isFalling = gravityDir == 1
             ? theRB.linearVelocity.y < 0
             : theRB.linearVelocity.y > 0;
@@ -162,9 +164,6 @@ public class PlayerMovement : MonoBehaviour {
     private void SetGravityDir(int dir) {
         gravityDir = dir;
         theRB.gravityScale = baseGravityScale * gravityDir;
-
-        // flip player
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

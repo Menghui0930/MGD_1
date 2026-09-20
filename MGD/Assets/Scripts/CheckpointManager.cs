@@ -7,7 +7,6 @@ public class CheckpointManager : MonoBehaviour {
     private bool hasCheckpoint = false;
 
     private void Awake() {
-        // 简单单例模式
         if (Instance != null && Instance != this) {
             Destroy(gameObject);
             return;
@@ -15,7 +14,6 @@ public class CheckpointManager : MonoBehaviour {
         Instance = this;
     }
 
-    // 玩家出生时调用一次，把出生点设为第一个checkpoint
     public void SetInitialCheckpoint(Vector3 pos) {
         if (!hasCheckpoint) {
             currentCheckpointPos = pos;
@@ -23,7 +21,6 @@ public class CheckpointManager : MonoBehaviour {
         }
     }
 
-    // 碰到新checkpoint时更新
     public void SetCheckpoint(Vector3 pos) {
         currentCheckpointPos = pos;
         hasCheckpoint = true;

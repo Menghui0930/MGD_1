@@ -34,10 +34,9 @@ public class BirdTriggerZone : MonoBehaviour {
         isGrown = true;
 
         if (platformCollider != null) {
-            platformCollider.enabled = true; // 还没完全展开前先关闭
+            platformCollider.enabled = true; 
         }
         RestartRoutine(maxScale, growDuration, onComplete: () => {
-            // 完全展开后才能站
             if (isGrown) {
                 if (platformCollider != null) {
                     platformCollider.enabled = true;
@@ -51,7 +50,7 @@ public class BirdTriggerZone : MonoBehaviour {
         isGrown = false;
 
         if (platformCollider != null) {
-            platformCollider.enabled = false; // 立刻不能站
+            platformCollider.enabled = false; 
         }
         RestartRoutine(0.3804588f, shrinkDuration, onComplete: null);
     }
@@ -62,10 +61,9 @@ public class BirdTriggerZone : MonoBehaviour {
     }
 
     private IEnumerator ScaleTo(float targetScale, float duration, System.Action onComplete) {
-        float startScale = circleMask.localScale.x; // 从当前实际大小开始，不会跳变
+        float startScale = circleMask.localScale.x; 
         float elapsed = 0f;
 
-        // 根据剩余距离等比例调整时长，这样不管从哪个进度开始，速度感觉是一致的
         float distance = Mathf.Abs(targetScale - startScale);
         float fullDistance = Mathf.Max(maxScale, 0.001f);
         float adjustedDuration = duration * (distance / fullDistance);
@@ -74,7 +72,7 @@ public class BirdTriggerZone : MonoBehaviour {
         while (elapsed < adjustedDuration) {
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / adjustedDuration);
-            t = t * t * (3f - 2f * t); // smoothstep 缓动
+            t = t * t * (3f - 2f * t); 
             float current = Mathf.Lerp(startScale, targetScale, t);
             circleMask.localScale = new Vector3(current, current, 1f);
             yield return null;

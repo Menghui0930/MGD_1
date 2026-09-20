@@ -13,7 +13,6 @@ public class SkillTriggerZone : MonoBehaviour {
     private InputAction m_Skill;
     private bool isPlayerInRange = false;
 
-    // 全局广播事件，任何脚本调用 SkillTriggerZone.RaiseSkillButtonPressed() 都会通知所有订阅者
     public static event System.Action OnSkillButtonPressed;
 
     private void Awake() {
