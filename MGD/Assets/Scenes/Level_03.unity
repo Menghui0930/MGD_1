@@ -19971,6 +19971,14 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnJumpButtonDown
       objectReference: {fileID: 0}
+    - target: {fileID: 8821679080048144621, guid: 56df6d8dbe4f8804e9bddcea07a7b550, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.700012
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821679080048144621, guid: 56df6d8dbe4f8804e9bddcea07a7b550, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23.940002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -40266,7 +40274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1740369218
 MonoBehaviour:
   m_ObjectHideFlags: 0
