@@ -46,7 +46,7 @@ public class SkillTriggerZone : MonoBehaviour {
     }
 
     private void TriggerSkill() {
-        audioSource.PlayOneShot(timeWarp);
+        audioSource.PlayOneShot(timeWarp, 0.5f);
         switch (bridgeType) {
             case BridgeType.Short:
                 if (targetBridge.CanRepair) targetBridge.Repair();
