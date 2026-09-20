@@ -2,6 +2,8 @@
 using UnityEngine.InputSystem;
 
 public class SkillTriggerZone : MonoBehaviour {
+    public AudioClip timeWarp;
+    public AudioSource audioSource;
     private enum BridgeType { Short, Long, Special }
 
     [SerializeField] private BridgeType bridgeType;
@@ -44,6 +46,7 @@ public class SkillTriggerZone : MonoBehaviour {
     }
 
     private void TriggerSkill() {
+        audioSource.PlayOneShot(timeWarp);
         switch (bridgeType) {
             case BridgeType.Short:
                 if (targetBridge.CanRepair) targetBridge.Repair();

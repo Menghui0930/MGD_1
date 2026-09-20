@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour {
+
+    private PlayerAudioEffects audioEffects;
     private InputAction m_Move;
     private InputAction m_Jump;
     private InputAction m_Flip;
@@ -38,6 +40,7 @@ public class PlayerMovement : MonoBehaviour {
     private float jumpForce;
     [SerializeField] private float jumpHeight = 5f;
     [SerializeField] private int maxJumps = 2;
+    public float timeJumped;
     public int JumpLeft;
 
     #endregion
@@ -67,6 +70,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Start() {
+        audioEffects = GetComponent<PlayerAudioEffects>();
         theRB = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         JumpLeft = maxJumps;
@@ -74,6 +78,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Update() {
+        
         CheckDeviceFlip();
 
         /*
@@ -98,10 +103,16 @@ public class PlayerMovement : MonoBehaviour {
         LayerMask combinedGroundMask = groundMask | squishMask;
         isGrounded = Physics2D.OverlapCircle(activeChecker.position, 0.3f, combinedGroundMask);
 
-        if (isGrounded && jumpForce == 0f && theRB.linearVelocityY == 0f) {
-            JumpLeft = maxJumps;
-            isJumping = false;
-        }
+        // if (isGrounded && jumpForce == 0f && theRB.linearVelocityY == 0f) {
+        //     JumpLeft = maxJumps;
+        //     isJumping = false;
+        // }
+        //Commented for causing input bugs
+
+        if (isGrounded && jumpForce == 0f && Time.time >= timeJumped + 0.1f) {
+             JumpLeft = maxJumps;
+             isJumping = false;
+         }
 
         bool topBlocked = Physics2D.OverlapCircle(groundCheckerTop.position, squishCheckRadius, squishMask);
         bool bottomBlocked = Physics2D.OverlapCircle(groundCheckerBottom.position, squishCheckRadius, squishMask);
@@ -114,6 +125,7 @@ public class PlayerMovement : MonoBehaviour {
 
         if (m_Jump.WasPressedThisFrame() || touchJumpPressed) {
             Jump();
+            timeJumped = Time.time;
             touchJumpPressed = false;
         }
 
@@ -142,6 +154,7 @@ public class PlayerMovement : MonoBehaviour {
     private void Jump() {
         if (JumpLeft == 0) return;
         if (isGrounded || JumpLeft > 0) {
+            audioEffects.PlayJumpSound();
             JumpLeft -= 1;
             jumpForce = Mathf.Sqrt(jumpHeight * Mathf.Abs(Physics2D.gravity.y));
             isJumping = true;
@@ -162,8 +175,11 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void SetGravityDir(int dir) {
+        if (gravityDir == dir) return;
+
         gravityDir = dir;
         theRB.gravityScale = baseGravityScale * gravityDir;
+        audioEffects.PlayGravityWarpSound();
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

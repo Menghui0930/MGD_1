@@ -6,6 +6,8 @@ using UnityEngine;
 public class PopUpUI : MonoBehaviour
 {
     public RectTransform rectTransform;
+    public AudioSource audioSource;
+    public AudioClip allItemsCollected;
     public Image image;
     public Button button;
 
@@ -29,6 +31,7 @@ public class PopUpUI : MonoBehaviour
     public void StartAnimation()
     {
         image.enabled = true;
+        audioSource.PlayOneShot(allItemsCollected);
         rectTransform.DOAnchorPos(Vector2.zero, 0.5f);
     }
 
