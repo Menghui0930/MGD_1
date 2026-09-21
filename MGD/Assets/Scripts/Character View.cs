@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using System.Collections.Generic;
-using UnityEngine.TextCore.Text;
 
 public class CharacterView : MonoBehaviour
 {

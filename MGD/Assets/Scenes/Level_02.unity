@@ -11240,8 +11240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUPIngredient
   ingredientUI: {fileID: 8204181585860550200}
-  audioSource: {fileID: 0}
-  pickUp: {fileID: 0}
+  audioSource: {fileID: 1970287231}
+  pickUp: {fileID: 8300000, guid: fd102e2d6e1af2b44bd68401aac11bdb, type: 3}
 --- !u!212 &1237051773
 SpriteRenderer:
   serializedVersion: 2
@@ -18440,7 +18440,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2067399785}
           m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-          m_MethodName: OnRightButtonDown
+          m_MethodName: OnMoveButtonUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
