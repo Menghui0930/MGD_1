@@ -186,6 +186,7 @@ MonoBehaviour:
     m_Bits: 8
   jumpHeight: 5
   maxJumps: 2
+  timeJumped: 0
   JumpLeft: 0
   fallMultiplier: 1.5
   baseGravityScale: 1
@@ -243,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAudioEffects
   audioSource: {fileID: 0}
   jump: {fileID: 8300000, guid: e4f8a9dbce547b3498940c4fedcf6bff, type: 3}
+  jump2: {fileID: 8300000, guid: c04628a94c214b745bad52b235706b3c, type: 3}
   gravity: {fileID: 8300000, guid: c3fc2d729b3ab10478af8b9370cd948d, type: 3}
 --- !u!82 &7976466693824711883
 AudioSource:

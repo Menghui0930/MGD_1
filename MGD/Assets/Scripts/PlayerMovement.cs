@@ -81,11 +81,11 @@ public class PlayerMovement : MonoBehaviour {
         
         CheckDeviceFlip();
 
-        /*
+        
         if (m_Flip.WasPressedThisFrame()) {
             SetGravityDir(gravityDir * -1);
         }
-        */
+        
 
         // move
         moveDir = m_Move.ReadValue<Vector2>();
@@ -154,7 +154,8 @@ public class PlayerMovement : MonoBehaviour {
     private void Jump() {
         if (JumpLeft == 0) return;
         if (isGrounded || JumpLeft > 0) {
-            audioEffects.PlayJumpSound();
+            if (JumpLeft < maxJumps) audioEffects.PlayJumpSoundAlt();
+            else audioEffects.PlayJumpSound(); 
             JumpLeft -= 1;
             jumpForce = Mathf.Sqrt(jumpHeight * Mathf.Abs(Physics2D.gravity.y));
             isJumping = true;
@@ -179,6 +180,7 @@ public class PlayerMovement : MonoBehaviour {
 
         gravityDir = dir;
         theRB.gravityScale = baseGravityScale * gravityDir;
+        UpdateSpriteFacing();
         audioEffects.PlayGravityWarpSound();
     }
 
@@ -194,6 +196,20 @@ public class PlayerMovement : MonoBehaviour {
         if (mp != null && mp == currentPlatform) {
             currentPlatform = null;
         }
+    }
+
+    private void UpdateSpriteFacing() {
+        Vector3 currentScale = transform.localScale;
+
+        // Determine X scale based on movement direction
+        float targetXScale = currentScale.x;
+        if (_movement > 0f) targetXScale = Mathf.Abs(currentScale.x);
+        else if (_movement < 0f) targetXScale = -Mathf.Abs(currentScale.x);
+
+        // Determine Y scale based on gravity direction (gravityDir == 1 -> right side up, gravityDir == -1 -> upside down)
+        float targetYScale = Mathf.Abs(currentScale.y) * gravityDir;
+
+        transform.localScale = new Vector3(targetXScale, targetYScale, currentScale.z);
     }
 
     private void OnDrawGizmos() {

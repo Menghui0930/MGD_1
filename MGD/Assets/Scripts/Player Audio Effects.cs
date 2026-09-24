@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerAudioEffects : MonoBehaviour
 {
     public AudioSource audioSource;
-    public AudioClip jump, gravity;
+    public AudioClip jump, jump2, gravity;
 
     void Start()
     {
@@ -13,6 +13,12 @@ public class PlayerAudioEffects : MonoBehaviour
     {
         if(jump != null)
             audioSource.PlayOneShot(jump);
+    }
+
+        public void PlayJumpSoundAlt()
+    {
+        if(jump != null)
+            audioSource.PlayOneShot(jump2);
     }
 
     public void PlayGravityWarpSound()
