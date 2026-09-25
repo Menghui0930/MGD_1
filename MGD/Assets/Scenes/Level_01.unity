@@ -4084,6 +4084,7 @@ GameObject:
   - component: {fileID: 612764735}
   - component: {fileID: 612764734}
   - component: {fileID: 612764736}
+  - component: {fileID: 612764737}
   m_Layer: 0
   m_Name: Ingredient
   m_TagString: Untagged
@@ -4217,6 +4218,18 @@ MonoBehaviour:
   ingredientUI: {fileID: 5321270797654621839}
   audioSource: {fileID: 1787413556}
   pickUp: {fileID: 8300000, guid: fd102e2d6e1af2b44bd68401aac11bdb, type: 3}
+--- !u!114 &612764737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612764732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8024ec9278a104cb8d89a23a66ac4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Levitate
 --- !u!1 &613214863
 GameObject:
   m_ObjectHideFlags: 0
@@ -18296,8 +18309,8 @@ Transform:
   m_GameObject: {fileID: 4739360026036382377}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.46150208, y: 0.0230999, z: 10}
-  m_LocalScale: {x: 0.91195375, y: 0.91195375, z: 0.91195375}
+  m_LocalPosition: {x: 27.8, y: 4.6, z: 10}
+  m_LocalScale: {x: 1.573485, y: 1.573485, z: 1.573485}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4903540241322593662}
@@ -18687,6 +18700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2421940954030608582}
   - component: {fileID: 8328429316274040910}
+  - component: {fileID: 8328429316274040911}
   m_Layer: 0
   m_Name: BG LEVEL
   m_TagString: Untagged
@@ -19242,7 +19256,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: -10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -5686019476911766386, guid: 6d375d7fb8aee484db5e45cd35baca3b, type: 3}
+  m_Sprite: {fileID: 483712410486100477, guid: 87537d1cc5ec40647b5f91612c2ab0aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -19252,6 +19266,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &8328429316274040911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4739360026036382377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ac8eb164d49d442846b6aa24eb8b3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Parallax
+  playerCamera: {fileID: 4903540241322593662}
+  parallaxFactor: 0.15
 --- !u!1 &8378896181251975083 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 706890877728672759, guid: 0677da16b2a43aa4e8ff16f34840bd1c, type: 3}
@@ -19300,8 +19328,8 @@ Camera:
   m_GameObject: {fileID: 6107650028840488949}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
