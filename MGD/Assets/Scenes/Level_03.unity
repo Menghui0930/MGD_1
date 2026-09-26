@@ -11696,6 +11696,7 @@ GameObject:
   - component: {fileID: 482714532}
   - component: {fileID: 482714534}
   - component: {fileID: 482714533}
+  - component: {fileID: 482714535}
   m_Layer: 0
   m_Name: Ingredient 5
   m_TagString: Untagged
@@ -11829,6 +11830,18 @@ MonoBehaviour:
   ingredientUI: {fileID: 5926526069077783784}
   audioSource: {fileID: 123154566}
   pickUp: {fileID: 8300000, guid: fd102e2d6e1af2b44bd68401aac11bdb, type: 3}
+--- !u!114 &482714535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482714529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8024ec9278a104cb8d89a23a66ac4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Levitate
 --- !u!1 &483681813
 GameObject:
   m_ObjectHideFlags: 0
@@ -19376,6 +19389,7 @@ GameObject:
   - component: {fileID: 750633121}
   - component: {fileID: 750633123}
   - component: {fileID: 750633122}
+  - component: {fileID: 750633124}
   m_Layer: 0
   m_Name: Ingredient6
   m_TagString: Untagged
@@ -19509,6 +19523,18 @@ MonoBehaviour:
   ingredientUI: {fileID: 5926526069077783784}
   audioSource: {fileID: 123154566}
   pickUp: {fileID: 8300000, guid: fd102e2d6e1af2b44bd68401aac11bdb, type: 3}
+--- !u!114 &750633124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750633118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8024ec9278a104cb8d89a23a66ac4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Levitate
 --- !u!1 &750986040
 GameObject:
   m_ObjectHideFlags: 0
@@ -25085,6 +25111,7 @@ GameObject:
   - component: {fileID: 915798027}
   - component: {fileID: 915798029}
   - component: {fileID: 915798028}
+  - component: {fileID: 915798030}
   m_Layer: 0
   m_Name: Ingredient
   m_TagString: Untagged
@@ -25218,6 +25245,18 @@ MonoBehaviour:
   ingredientUI: {fileID: 5926526069077783784}
   audioSource: {fileID: 123154566}
   pickUp: {fileID: 8300000, guid: fd102e2d6e1af2b44bd68401aac11bdb, type: 3}
+--- !u!114 &915798030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915798025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8024ec9278a104cb8d89a23a66ac4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Levitate
 --- !u!1 &922225719
 GameObject:
   m_ObjectHideFlags: 0
@@ -30419,6 +30458,7 @@ GameObject:
   - component: {fileID: 1129715077}
   - component: {fileID: 1129715079}
   - component: {fileID: 1129715078}
+  - component: {fileID: 1129715080}
   m_Layer: 0
   m_Name: Ingredient 2
   m_TagString: Untagged
@@ -30552,6 +30592,18 @@ MonoBehaviour:
   ingredientUI: {fileID: 5926526069077783784}
   audioSource: {fileID: 123154566}
   pickUp: {fileID: 8300000, guid: fd102e2d6e1af2b44bd68401aac11bdb, type: 3}
+--- !u!114 &1129715080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129715074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8024ec9278a104cb8d89a23a66ac4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Levitate
 --- !u!1 &1130591706
 GameObject:
   m_ObjectHideFlags: 0
@@ -31934,6 +31986,7 @@ GameObject:
   - component: {fileID: 1183011790}
   - component: {fileID: 1183011792}
   - component: {fileID: 1183011791}
+  - component: {fileID: 1183011793}
   m_Layer: 0
   m_Name: Ingredient 7
   m_TagString: Untagged
@@ -32067,6 +32120,18 @@ MonoBehaviour:
   ingredientUI: {fileID: 5926526069077783784}
   audioSource: {fileID: 123154566}
   pickUp: {fileID: 8300000, guid: fd102e2d6e1af2b44bd68401aac11bdb, type: 3}
+--- !u!114 &1183011793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183011787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8024ec9278a104cb8d89a23a66ac4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Levitate
 --- !u!1 &1197987282
 GameObject:
   m_ObjectHideFlags: 0
@@ -32553,6 +32618,7 @@ GameObject:
   - component: {fileID: 1217812190}
   - component: {fileID: 1217812192}
   - component: {fileID: 1217812191}
+  - component: {fileID: 1217812193}
   m_Layer: 0
   m_Name: Ingredient4
   m_TagString: Untagged
@@ -32686,6 +32752,18 @@ MonoBehaviour:
   ingredientUI: {fileID: 5926526069077783784}
   audioSource: {fileID: 123154566}
   pickUp: {fileID: 8300000, guid: fd102e2d6e1af2b44bd68401aac11bdb, type: 3}
+--- !u!114 &1217812193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217812187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8024ec9278a104cb8d89a23a66ac4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Levitate
 --- !u!1 &1218523301
 GameObject:
   m_ObjectHideFlags: 0
@@ -42187,6 +42265,7 @@ GameObject:
   - component: {fileID: 1567897073}
   - component: {fileID: 1567897075}
   - component: {fileID: 1567897074}
+  - component: {fileID: 1567897076}
   m_Layer: 0
   m_Name: Ingredient 3
   m_TagString: Untagged
@@ -42320,6 +42399,18 @@ MonoBehaviour:
   ingredientUI: {fileID: 5926526069077783784}
   audioSource: {fileID: 123154566}
   pickUp: {fileID: 8300000, guid: fd102e2d6e1af2b44bd68401aac11bdb, type: 3}
+--- !u!114 &1567897076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567897070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8024ec9278a104cb8d89a23a66ac4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Levitate
 --- !u!1 &1569582137
 GameObject:
   m_ObjectHideFlags: 0

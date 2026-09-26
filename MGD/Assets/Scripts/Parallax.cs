@@ -3,7 +3,8 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
     public Transform playerCamera;
-    [Range(0, 1)] public float parallaxFactor;
+    [Range(0, 1)] public float parallaxFactorX;
+    [Range(0, 1)] public float parallaxFactorY;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private Vector3 lastCameraPosition;
@@ -20,7 +21,7 @@ public class Parallax : MonoBehaviour
     {
         Vector3 deltaMovement = playerCamera.position - lastCameraPosition;
 
-        transform.position += new Vector3(deltaMovement.x * parallaxFactor * -1, deltaMovement.y * parallaxFactor, 0);
+        transform.position += new Vector3(deltaMovement.x * parallaxFactorX * -1, deltaMovement.y * parallaxFactorY * -1, 0);
         lastCameraPosition = playerCamera.position;
     }
 }

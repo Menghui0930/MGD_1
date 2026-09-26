@@ -57,6 +57,8 @@ public class PlayerMovement : MonoBehaviour {
     [Header("Squish Death")]
     [SerializeField] private LayerMask squishMask; 
     [SerializeField] private float squishCheckRadius = 0.3f;
+    public bool hasCeilingContact;
+    public bool hasFloorContact;
 
     private MovingPlatform currentPlatform = null;
 
@@ -99,7 +101,8 @@ public class PlayerMovement : MonoBehaviour {
         else if (_movement < 0f) transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
 
         // Select which ground Checker to use based on the current direction of gravity.
-        Transform activeChecker = gravityDir == 1 ? groundCheckerBottom : groundCheckerTop;
+        //Transform activeChecker = gravityDir == 1 ? groundCheckerBottom : groundCheckerTop;
+        Transform activeChecker = groundCheckerBottom;
         LayerMask combinedGroundMask = groundMask | squishMask;
         isGrounded = Physics2D.OverlapCircle(activeChecker.position, 0.3f, combinedGroundMask);
 
@@ -114,12 +117,12 @@ public class PlayerMovement : MonoBehaviour {
              isJumping = false;
          }
 
-        bool topBlocked = Physics2D.OverlapCircle(groundCheckerTop.position, squishCheckRadius, squishMask);
-        bool bottomBlocked = Physics2D.OverlapCircle(groundCheckerBottom.position, squishCheckRadius, squishMask);
+        // bool topBlocked = Physics2D.OverlapCircle(groundCheckerTop.position, squishCheckRadius, squishMask);
+        // bool bottomBlocked = Physics2D.OverlapCircle(groundCheckerBottom.position, squishCheckRadius, squishMask);
 
-        if (topBlocked && bottomBlocked) {
-            GetComponent<PlayerRespawn>().Die();
-        }
+        // if (topBlocked && bottomBlocked) {
+        //     GetComponent<PlayerRespawn>().Die();
+        // }
 
         theRB.linearVelocity = new Vector2(_movement * moveSpeed, theRB.linearVelocityY);
 
@@ -148,7 +151,14 @@ public class PlayerMovement : MonoBehaviour {
 
         if (currentPlatform != null && isGrounded) {
             transform.position += currentPlatform.DeltaMovement;
-        }
+        }   
+
+    }
+
+    private void LateUpdate()
+    {
+        hasCeilingContact = false;
+        hasFloorContact = false;
     }
 
     private void Jump() {
@@ -195,6 +205,28 @@ public class PlayerMovement : MonoBehaviour {
         MovingPlatform mp = collision.gameObject.GetComponent<MovingPlatform>();
         if (mp != null && mp == currentPlatform) {
             currentPlatform = null;
+        }
+    }
+    
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // Check if the layer of the collided object is in squishMask
+        if (((1 << collision.gameObject.layer) & squishMask) == 0) return;
+
+        foreach (ContactPoint2D contact in collision.contacts)
+        {
+            // Vector2.dot compares the direction of the surface normal to vertical direction
+            // Dot > 0.7 means the surface is pushing DOWN on top of player (ceiling)
+            // Dot < -0.7 means surface is pushing UP under player (floor)
+            float verticalDot = Vector2.Dot(contact.normal, Vector2.up);
+
+            if (verticalDot < -0.7f) hasCeilingContact = true;
+            if (verticalDot > 0.7f) hasFloorContact = true;
+        }
+
+        if (hasCeilingContact && hasFloorContact)
+        {
+            GetComponent<PlayerRespawn>().Die();
         }
     }
 
