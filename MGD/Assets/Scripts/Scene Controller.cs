@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class SceneController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class SceneController : MonoBehaviour
 
     public void LoadNextScene()
     {
+        DOTween.KillAll();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
